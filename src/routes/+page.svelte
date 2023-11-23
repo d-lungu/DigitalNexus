@@ -1,4 +1,4 @@
-<a href="./pick-parts/"><button class="btn">Build a PC</button></a>
+<!--<a href="./pick-parts/"><button class="btn">Build a PC</button></a>-->
 
 <script>
   import local_shipping from "$lib/assets/local_shipping.svg";
@@ -10,7 +10,7 @@
   <main class="my-10">
     <!-- riga con le "features" del sito -->
     <div class="container mx-auto flex items-center justify-center">
-        <div class="flex flex-col md:flex-row sm:my-36 items-center justify-center">
+        <div class="container flex flex-col gap-x-16 md:flex-row md:gap-y-16 items-center justify-center">
           <div class="card shadow-xl h-96 w-96">
             <figure>
               <img class="h-36 w-36" src={local_shipping} alt="Shipping" />
