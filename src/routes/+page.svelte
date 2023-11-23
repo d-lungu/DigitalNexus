@@ -1,4 +1,4 @@
-<!--<a href="./pick-parts/"><button class="btn">Build a PC</button></a>-->
+<a href="./pick-parts/"><button class="btn">Build a PC</button></a>
 
 <script>
   import local_shipping from "$lib/assets/local_shipping.svg";
