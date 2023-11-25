@@ -1,8 +1,14 @@
 <script>
-	import '../app.css';
-  import search from "$lib/assets/search.svg";
-  import shopping_cart from "$lib/assets/shopping_cart.svg";
-  import account_circle from "$lib/assets/account_circle.svg";
+import '../app.css';
+
+
+import MdiMagnify from 'virtual:icons/mdi/magnify';
+import MdiCart from 'virtual:icons/mdi/cart';
+import MdiAccountCircle from 'virtual:icons/mdi/account-circle';
+
+let urlPcBuilding = "/pick-parts";
+let urlFindUs = "/find-us";
+let urlAboutUs = "/";
 </script>
 
 <div class="navbar"> <!-- aggiungere "sticky top-0" per ancorarla al top della pagina-->
@@ -14,9 +20,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul  class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-				<li><a href="/pick-parts">Build a PC</a></li>
-        <li><a href=".">Find the nearest shop to you</a></li> <!-- TODO: aggiungere link per Find the nearest shop -->
-				<li><a href=".">About us</a></li> <!-- TODO: aggiungere link per Where we are -->
+				<li><a href={urlPcBuilding}>Build a PC</a></li>
+        <li><a href={urlFindUs}>Find the nearest shop to you</a></li>
+				<li><a href={urlAboutUs}>About us</a></li>
       </ul>
     </div>
 
@@ -27,16 +33,16 @@
 	<!-- per PC -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-			<li><a href="/pick-parts">Configuration</a></li>
-			<li><a href=".">Find the nearest shop to you</a></li> <!-- TODO: aggiungere link per Find the nearest shop -->
-			<li><a href=".">About us</a></li> <!-- TODO: aggiungere link per Where we are -->
+			<li><a href={urlPcBuilding}>Configuration</a></li>
+			<li><a href={urlFindUs}>Find the nearest shop to you</a></li>
+			<li><a href={urlAboutUs}>About us</a></li>
     </ul>
   </div>
   <div class="navbar-end">
 		<ul class="menu menu-horizontal px-1">
-      <li><a href="."><img src={search} alt="Search"/></a></li> <!-- TODO: aggiungere link e immagine per Cerca -->
-      <li><a href="."><img src={shopping_cart} alt="Shopping Cart"/></a></li> <!-- TODO: aggiungere link e immagine per Carrello -->
-			<li><a href="."><img src={account_circle} alt="Account Circle"/></a></li> <!-- TODO: aggiungere link e immagine per Account -->
+      <li><a href="."><MdiMagnify/></a></li> <!-- TODO: aggiungere link e immagine per Cerca -->
+      <li><a href="."><MdiCart/></a></li> <!-- TODO: aggiungere link e immagine per Carrello -->
+			<li><a href="."><MdiAccountCircle/></a></li> <!-- TODO: aggiungere link e immagine per Account -->
     </ul>
   </div>
 </div>

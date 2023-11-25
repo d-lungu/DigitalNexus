@@ -5,6 +5,11 @@
   import payments from "$lib/assets/payments.svg";
   import star from "$lib/assets/star.svg";
   import sell from "$lib/assets/sell.svg";
+
+  import MdiTruck from 'virtual:icons/mdi/truck';
+  import MdiCreditCardOutline from 'virtual:icons/mdi/credit-card-outline';
+  import MdiStar from 'virtual:icons/mdi/star';
+  import MdiTag from 'virtual:icons/mdi/tag';
 </script>
 <div class="container mx-auto flex items-center justify-center">
   <main class="my-10">
@@ -13,7 +18,7 @@
         <div class="container flex flex-col gap-x-16 md:flex-row md:gap-y-16 items-center justify-center">
           <div class="card shadow-xl h-96 w-96">
             <figure>
-              <img class="h-36 w-36" src={local_shipping} alt="Shipping" />
+              <MdiTruck class="h-36 w-36"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Insured Shipping</h2>
@@ -22,7 +27,7 @@
           </div>
           <div class="card shadow-xl h-96 w-96">
             <figure>
-              <img class="h-36 w-36" src={payments} alt="Payments" />
+              <MdiCreditCardOutline class="h-36 w-36"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Secure Payments</h2>
@@ -31,7 +36,7 @@
           </div>
           <div class="card shadow-xl h-96 w-96">
             <figure>
-              <img class="h-36 w-36" src={star} alt="Satisfaction" />
+              <MdiStar class="h-36 w-36"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Satisfaction Guaranteed</h2>
@@ -40,7 +45,7 @@
           </div>
           <div class="card shadow-xl h-96 w-96">
             <figure>
-              <img class="h-36 w-36" src={sell} alt="PrezzoDiVendita" />
+              <MdiTag class="h-36 w-36"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Unbeatable Prices</h2>

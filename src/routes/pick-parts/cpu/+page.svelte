@@ -42,11 +42,11 @@ function selectCpu(name, price, tdp) {
 		  {#each cpus as cpu}
 			<tr on:click={() => selectCpu(cpu.name, cpu.price, cpu.tdp)} class="hover:bg-primary">
 			  <td>{cpu.name}</td>
-			  <td>{"$" + cpu.price.toFixed(2)}</td>
+			  <td>$ {cpu.price.toFixed(2)}</td>
 			  <td>{cpu.core_count}</td>
-			  <td>{cpu.core_clock + " GHz"}</td>
-			  <td>{cpu.boost_clock + " GHz"}</td>
-			  <td>{cpu.tdp + " W"}</td>
+			  <td>{cpu.core_clock} GHz</td>
+			  <td>{cpu.boost_clock} GHz</td>
+			  <td>{cpu.tdp} W</td>
 			</tr>
 		  {:else}
 		  <tr>
