@@ -1,11 +1,6 @@
 <!--<a href="./pick-parts/"><button class="btn">Build a PC</button></a>-->
 
 <script>
-  import local_shipping from "$lib/assets/local_shipping.svg";
-  import payments from "$lib/assets/payments.svg";
-  import star from "$lib/assets/star.svg";
-  import sell from "$lib/assets/sell.svg";
-
   import MdiTruck from 'virtual:icons/mdi/truck';
   import MdiCreditCardOutline from 'virtual:icons/mdi/credit-card-outline';
   import MdiStar from 'virtual:icons/mdi/star';
