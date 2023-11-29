@@ -1,7 +1,7 @@
 <script>
 
 import { browser } from "$app/environment";
-import { goto } from '$app/navigation';
+import MdiTrash from 'virtual:icons/mdi/trash';
 
 function getLocalStorage(key) {
     if (browser) {
@@ -76,11 +76,25 @@ if (isStorageSelected) {
     totalCost += parseFloat(getLocalStorage("storagePrice"));
 }
 
+function startNew() {
+    if (browser) {
+        if (confirm("Are you sure you want to start new?")) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
+}
+
 </script>
 
 <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl">
     <!-- Title -->
-    <p class="text-2xl text-justify font-bold">Choose your parts</p>
+    <div class="container flex flex-row m-auto items-center justify-center gap-x-4">
+        <p class="text-2xl text-justify font-bold">Choose your parts</p>
+        <div class="tooltip" data-tip="Start new...">
+            <button class="btn" on:click={startNew}><MdiTrash /></button>
+        </div>
+    </div>
     <!--<p class="text-xl text-justify">Estimated Wattage: {estimatedWattage} W</p>-->
 
     <!-- Table header -->
