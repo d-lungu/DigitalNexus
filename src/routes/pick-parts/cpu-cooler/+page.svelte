@@ -1,11 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goto } from '$app/navigation';
-    
-    function goBack(defaultRoute = '/home') {
-      const ref = document.referrer;
-      goto(ref.length > 0 ? ref : defaultRoute)
-    }
+    import { goBack } from "$lib/configurationHelper.js";
     
     let cpuCoolers = [];
     
