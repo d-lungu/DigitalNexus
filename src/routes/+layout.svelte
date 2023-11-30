@@ -22,7 +22,7 @@ let urlLogin = "/login";
       </label>
       <ul  class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 				<li><a href={urlPcBuilding}>Build a PC</a></li>
-        <li><a href={urlFindUs}>Find the nearest shop to you</a></li>
+        <li><a href={urlFindUs}>Find the nearest shop</a></li>
 				<li><a href={urlAboutUs}>About us</a></li>
       </ul>
     </div>
@@ -35,7 +35,7 @@ let urlLogin = "/login";
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
 			<li><a href={urlPcBuilding}>Configuration</a></li>
-			<li><a href={urlFindUs}>Find the nearest shop to you</a></li>
+			<li><a href={urlFindUs}>Find the nearest shop</a></li>
 			<li><a href={urlAboutUs}>About us</a></li>
     </ul>
   </div>

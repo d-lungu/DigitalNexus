@@ -1,4 +1,4 @@
-<div class="container mx-auto text-5xl py-14 px-24 bg-base-100 shadow-xl">Who We Are</div><br>
+<div class="container mx-auto text-5xl py-14 px-24 bg-base-100 shadow-xl">ABOUT DIGITALNEXUS.</div><br>
 <br>
 <div class="text-center text-lg italic font-bold">Always the Best Price on the Net for IT and Electronics</div>
 <br>
@@ -26,7 +26,7 @@
             <br> -------- 10 years of great successes!! --------</span>
     </p>
     <p>
-        In April 2006 our company registered on the Ebay platform, with the username 'account still active and owned by us': <span class="font-bold">Digi.Nexus01</span>, quickly becoming a Platinum level PowerSeller with 2029 positive feedback. 
+        In April 2006 our company registered on the Ebay platform, with the username 'account still active and owned by us': <span class="font-bold">Digi.Nexus01</span>, quickly becoming a Platinum level PowerSeller with 2029 positive feedbacks. 
         Due to high commissions we have stopped publishing the products on Ebay.
     </p>
     <p class="space-y-10">

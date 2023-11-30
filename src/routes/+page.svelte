@@ -10,8 +10,8 @@
   <main class="my-10">
     <!-- riga con le "features" del sito -->
     <div class="container mx-auto flex items-center justify-center">
-        <div class="container flex flex-col gap-x-16 md:flex-row md:gap-y-16 items-center justify-center">
-          <div class="card shadow-xl h-76 w-76">
+        <div class="container flex flex-col gap-x-8 md:flex-row md:gap-y-16 items-center justify-center">
+          <div class="card card-side shadow-xl h-76 w-76 p-8">
             <figure>
               <MdiTruck class="h-16 w-16"/>
             </figure>
@@ -20,7 +20,7 @@
               <p>We rely on reliable partners, punctual and solid like GLS.</p>
             </div>
           </div>
-          <div class="card shadow-xl h-76 w-76">
+          <div class="card card-side shadow-xl h-76 w-76 p-8">
             <figure>
               <MdiCreditCardOutline class="h-16 w-16"/>
             </figure>
@@ -29,7 +29,7 @@
               <p>Different payment methods for make your purchases simple</p>
             </div>
           </div>
-          <div class="card shadow-xl h-64 w-76">
+          <div class="card card-side shadow-xl h-76 w-76 p-8">
             <figure>
               <MdiStar class="h-16 w-16"/>
             </figure>
@@ -38,7 +38,7 @@
               <p>Average rating of 4.8 out of over 55000 customers!</p>
             </div>
           </div>
-          <div class="card shadow-xl h-76 w-76">
+          <div class="card card-side shadow-xl h-76 w-76 p-8">
             <figure>
               <MdiTag class="h-16 w-16"/>
             </figure>
@@ -56,7 +56,7 @@
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Build your own PC!</p>
           <p>We provide part selection, pricing, and compatibility guidance for do-it-yourself computer builders.</p>
-          <button class="btn">Start your build</button>
+          <a href="/pick-parts"><button class="btn">Start your build</button></a>
       </main>
     </div>
 
