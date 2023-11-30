@@ -8,7 +8,7 @@ import MdiAccountCircle from 'virtual:icons/mdi/account-circle';
 
 let urlPcBuilding = "/pick-parts";
 let urlFindUs = "/find-us";
-let urlAboutUs = "/";
+let urlAboutUs = "/about-us";
 let urlLogin = "/login";
 </script>
 
@@ -46,6 +46,7 @@ let urlLogin = "/login";
 			<li><a href="{urlLogin}"><MdiAccountCircle/></a></li> <!-- TODO: aggiungere link e immagine per Account -->
     </ul>
   </div>
+  
 </div>
 
 <slot />

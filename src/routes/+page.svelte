@@ -11,36 +11,36 @@
     <!-- riga con le "features" del sito -->
     <div class="container mx-auto flex items-center justify-center">
         <div class="container flex flex-col gap-x-16 md:flex-row md:gap-y-16 items-center justify-center">
-          <div class="card shadow-xl h-96 w-96">
+          <div class="card shadow-xl h-76 w-76">
             <figure>
-              <MdiTruck class="h-36 w-36"/>
+              <MdiTruck class="h-16 w-16"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Insured Shipping</h2>
               <p>We rely on reliable partners, punctual and solid like GLS.</p>
             </div>
           </div>
-          <div class="card shadow-xl h-96 w-96">
+          <div class="card shadow-xl h-76 w-76">
             <figure>
-              <MdiCreditCardOutline class="h-36 w-36"/>
+              <MdiCreditCardOutline class="h-16 w-16"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Secure Payments</h2>
               <p>Different payment methods for make your purchases simple</p>
             </div>
           </div>
-          <div class="card shadow-xl h-96 w-96">
+          <div class="card shadow-xl h-64 w-76">
             <figure>
-              <MdiStar class="h-36 w-36"/>
+              <MdiStar class="h-16 w-16"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Satisfaction Guaranteed</h2>
               <p>Average rating of 4.8 out of over 55000 customers!</p>
             </div>
           </div>
-          <div class="card shadow-xl h-96 w-96">
+          <div class="card shadow-xl h-76 w-76">
             <figure>
-              <MdiTag class="h-36 w-36"/>
+              <MdiTag class="h-16 w-16"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Unbeatable Prices</h2>
