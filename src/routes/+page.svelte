@@ -1,46 +1,45 @@
-<!--<a href="./pick-parts/"><button class="btn">Build a PC</button></a>-->
-
 <script>
   import MdiTruck from 'virtual:icons/mdi/truck';
   import MdiCreditCardOutline from 'virtual:icons/mdi/credit-card-outline';
   import MdiStar from 'virtual:icons/mdi/star';
   import MdiTag from 'virtual:icons/mdi/tag';
+  import placeholder_map from '$lib/assets/placeholder_map.png'; // TODO: fare una vera mappa
 </script>
 <div class="container mx-auto flex items-center justify-center">
-  <main class="my-10">
+  <main class="my-8">
     <!-- riga con le "features" del sito -->
     <div class="container mx-auto flex items-center justify-center">
         <div class="container flex flex-col gap-x-8 md:flex-row md:gap-y-16 items-center justify-center">
-          <div class="card card-side shadow-xl h-76 w-76 p-8">
+          <div class="card card-side shadow-l h-64 w-96 p-8">
             <figure>
-              <MdiTruck class="h-16 w-16"/>
+              <MdiTruck class="h-24 w-24"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Insured Shipping</h2>
               <p>We rely on reliable partners, punctual and solid like GLS.</p>
             </div>
           </div>
-          <div class="card card-side shadow-xl h-76 w-76 p-8">
+          <div class="card card-side shadow-l h-64 w-96 p-8">
             <figure>
-              <MdiCreditCardOutline class="h-16 w-16"/>
+              <MdiCreditCardOutline class="h-24 w-24"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Secure Payments</h2>
               <p>Different payment methods for make your purchases simple</p>
             </div>
           </div>
-          <div class="card card-side shadow-xl h-76 w-76 p-8">
+          <div class="card card-side shadow-l h-64 w-96 p-8">
             <figure>
-              <MdiStar class="h-16 w-16"/>
+              <MdiStar class="h-24 w-24"/>
             </figure>
             <div class="card-body">
-              <h2 class="card-title">Satisfaction Guaranteed</h2>
+              <h2 class="card-title">Guaranteed Satisfaction</h2>
               <p>Average rating of 4.8 out of over 55000 customers!</p>
             </div>
           </div>
-          <div class="card card-side shadow-xl h-76 w-76 p-8">
+          <div class="card card-side shadow-l h-64 w-96 p-8">
             <figure>
-              <MdiTag class="h-16 w-16"/>
+              <MdiTag class="h-24 w-24"/>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Unbeatable Prices</h2>
@@ -66,6 +65,7 @@
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Visit us</p>
           <p>We have more than 30 stores throughout Italy also open on weekends. Enter your address and find out which store is closest to you</p>
+          <img src={placeholder_map} alt="map" />
       </main>
     </div>
 
@@ -78,11 +78,14 @@
       <div>
         Receive a preview of many amazing offers on IT ed electronics! Enter your email here.
       </div>
-      <label class="label cursor-pointer">
+      <label class="label cursor-pointer gap-x-2">
         <input type="checkbox" checked="checked" class="checkbox" />
-        <span class="label-text"> Accept the general conditions and the privacy policy</span> 
+        <span class="label-text">Accept the general conditions and the privacy policy</span> 
       </label>
-      <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+      <div class="flex justify-center gap-x-2">
+        <input type="text" placeholder="Type here your email..." class="input input-bordered w-full max-w-xs" />
+        <button class="btn">Subscribe</button>
+      </div>
     </label>
   </main>
 </div>

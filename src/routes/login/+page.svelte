@@ -30,7 +30,7 @@
                     <label class="label">
                         <!-- svelte-ignore a11y-invalid-attribute -->
                         <a href="#" class="label-text-alt link link-hover"
-                            >Forgot password?</a
+                            >Have you forgot your password?</a
                         >
                     </label>
                 </div>
