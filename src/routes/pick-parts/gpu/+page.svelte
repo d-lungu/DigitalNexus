@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let gpus = [];
     
@@ -35,9 +35,9 @@
             </thead>
             <tbody>
               {#each gpus as gpu}
-                <tr on:click={() => selectGpu(gpu.name+" "+gpu.chipset, gpu.price)} class="hover:bg-primary">
+                <tr on:click={() => selectGpu(gpu.name+" "+gpu.chipset, checkForNullPrice(gpu.price))} class="hover:bg-primary">
                   <td>{gpu.name}</td>
-                  <td>$ {gpu.price.toFixed(2)}</td>
+                  <td>$ {checkForNullPrice(gpu.price)}</td>
                   <td>{gpu.chipset}</td>
                   <td>{gpu.memory} GB</td>
                   <td>{gpu.core_clock} MHz</td>

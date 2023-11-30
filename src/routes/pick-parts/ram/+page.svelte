@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let rams = [];
     
@@ -32,9 +32,9 @@
             </thead>
             <tbody>
               {#each rams as ram}
-                <tr on:click={() => selectRam(ram.name, ram.price)} class="hover:bg-primary">
+                <tr on:click={() => selectRam(ram.name, checkForNullPrice(ram.price))} class="hover:bg-primary">
                   <td>{ram.name}</td>
-                  <td>$ {ram.price.toFixed(2)}</td>
+                  <td>$ {checkForNullPrice(ram.price)}</td>
                   <td>DDR{ram.speed[0]}</td>
                   <td>{ram.speed[1]} MHz</td>
                   <td>{ram.modules[0]} x {ram.modules[1]} GB</td>

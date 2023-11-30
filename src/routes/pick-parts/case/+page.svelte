@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let cases = [];
     
@@ -33,13 +33,13 @@
             </thead>
             <tbody>
               {#each cases as _case}
-                <tr on:click={() => selectCase(_case.name, _case.price)} class="hover:bg-primary">
+                <tr on:click={() => selectCase(_case.name, checkForNullPrice(_case.price))} class="hover:bg-primary">
                   <td>{_case.name}</td>
-                  <td>{"$" + _case.price.toFixed(2)}</td>
+                  <td>$ {checkForNullPrice(_case.price)}</td>
                   <td>{_case.type}</td>
                   <td>{_case.color}</td>
                   <td>{_case.side_panel}</td>
-                  <td>{_case.external_volume + " L"}</td>
+                  <td>{_case.external_volume} L</td>
                 </tr>
               {:else}
               <tr>

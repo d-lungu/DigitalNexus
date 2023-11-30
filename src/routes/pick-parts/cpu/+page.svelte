@@ -1,6 +1,6 @@
 <script>
 import { onMount } from 'svelte';
-import { goBack } from "$lib/configurationHelper.js";
+import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
 
 let cpus = [];
 
@@ -35,9 +35,9 @@ function selectCpu(name, price, tdp) {
 		</thead>
 		<tbody>
 		  {#each cpus as cpu}
-			<tr on:click={() => selectCpu(cpu.name, cpu.price, cpu.tdp)} class="hover:bg-primary">
+			<tr on:click={() => selectCpu(cpu.name, checkForNullPrice(cpu.price), cpu.tdp)} class="hover:bg-primary">
 			  <td>{cpu.name}</td>
-			  <td>$ {cpu.price.toFixed(2)}</td>
+			  <td>$ {checkForNullPrice(cpu.price)}</td>
 			  <td>{cpu.core_count}</td>
 			  <td>{cpu.core_clock} GHz</td>
 			  <td>{cpu.boost_clock} GHz</td>

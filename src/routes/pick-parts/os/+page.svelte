@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let oss = [];
     
@@ -16,6 +16,7 @@
     
         goBack("/pick-parts/");
     }
+
     </script>
     <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl" style="background:0;">
         <p class="text-2xl text-justify font-bold">Choose your Operating System</p>
@@ -31,9 +32,9 @@
             </thead>
             <tbody>
               {#each oss as os}
-                <tr on:click={() => selectOs(os.name, os.price)} class="hover:bg-primary">
+                <tr on:click={() => selectOs(os.name, checkForNullPrice(os.price))} class="hover:bg-primary">
                   <td>{os.name}</td>
-                  <td>$ {os.price}</td>
+                  <td>$ {checkForNullPrice(os.price)}</td>
                   <td>{os.mode}</td>
                   <td>{os.max_memory} GB</td>
                 </tr>

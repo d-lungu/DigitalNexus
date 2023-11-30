@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let storages = [];
     
@@ -33,9 +33,9 @@
             </thead>
             <tbody>
               {#each storages as storage}
-                <tr on:click={() => selectStorage(storage.name, storage.price)} class="hover:bg-primary">
+                <tr on:click={() => selectStorage(storage.name, checkForNullPrice(storage.price))} class="hover:bg-primary">
                   <td>{storage.name}</td>
-                  <td>{storage.price}</td>
+                  <td>{checkForNullPrice(storage.price)}</td>
                   <td>{storage.capacity} MB</td>
                   <td>{storage.type}</td>
                   <td>{storage.form_factor}</td>

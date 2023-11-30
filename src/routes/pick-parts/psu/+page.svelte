@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let psus = [];
     
@@ -33,9 +33,9 @@
             </thead>
             <tbody>
               {#each psus as psu}
-                <tr on:click={() => selectPsu(psu.name, psu.price)} class="hover:bg-primary">
+                <tr on:click={() => selectPsu(psu.name, checkForNullPrice(psu.price))} class="hover:bg-primary">
                   <td>{psu.name}</td>
-                  <td>$ {psu.price}</td>
+                  <td>$ {checkForNullPrice(psu.price)}</td>
                   <td>{psu.type}</td>
                   <td>{psu.efficiency}</td>
                   <td>{psu.wattage} W</td>

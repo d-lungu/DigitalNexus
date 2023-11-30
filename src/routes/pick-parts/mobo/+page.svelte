@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
     
     let mobos = [];
     
@@ -34,9 +34,9 @@
             </thead>
             <tbody>
               {#each mobos as mobo}
-                <tr on:click={() => selectMobo(mobo.name, mobo.price)} class="hover:bg-primary">
+                <tr on:click={() => selectMobo(mobo.name, checkForNullPrice(mobo.price))} class="hover:bg-primary">
                   <td>{mobo.name}</td>
-                  <td>$ {mobo.price.toFixed(2)}</td>
+                  <td>$ {checkForNullPrice(mobo.price)}</td>
                   <td>{mobo.socket}</td>
                   <td>{mobo.form_factor}</td>
                   <td>{mobo.max_memory} GB</td>

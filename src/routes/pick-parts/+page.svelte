@@ -2,6 +2,7 @@
 
 import { browser } from "$app/environment";
 import MdiTrash from 'virtual:icons/mdi/trash';
+import {roundToTwoDigits} from '$lib/configurationHelper.js';
 
 function getLocalStorage(key) {
     if (browser) {
@@ -78,12 +79,14 @@ if (isStorageSelected) {
 
 function startNew() {
     if (browser) {
-        if (confirm("Are you sure you want to start new?")) {
+        if (confirm("Are you sure you want to start a new configuration?")) {
             localStorage.clear();
             location.reload();
         }
     }
 }
+
+
 
 </script>
 
@@ -188,7 +191,7 @@ function startNew() {
     <!-- Results -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/2"></div>
-        <div class="basis-1/2">Total: ${parseFloat(totalCost)}</div>
+        <div class="basis-1/2">Total: ${roundToTwoDigits(totalCost)}</div>
     </div>
 
     <div class="container flex flex-row text-center shadow">
