@@ -7,7 +7,7 @@ import MdiCart from 'virtual:icons/mdi/cart';
 import MdiAccountCircle from 'virtual:icons/mdi/account-circle';
 
 let urlPcBuilding = "/pick-parts";
-let urlFindUs = "/find-us";
+let urlFindUs = "/#find-us";
 let urlAboutUs = "/about-us";
 let urlLogin = "/login";
 </script>
