@@ -1,11 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let mobos = [];
     
     onMount(async () => {
-        const res = await fetch(`https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/motherboard.json`);
+        const res = await fetch(datasetEndpoints.mobo);
         mobos = await res.json();
         mobos.length = 50; // reduce size to 50
     });

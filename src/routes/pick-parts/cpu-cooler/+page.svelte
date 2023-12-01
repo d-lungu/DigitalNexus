@@ -1,11 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
+    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let cpuCoolers = [];
     
     onMount(async () => {
-        const res = await fetch(`https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/cpu-cooler.json`);
+        const res = await fetch(datasetEndpoints.cpucooler);
         cpuCoolers = await res.json();
         cpuCoolers.length = 50; // reduce size to 50
     });

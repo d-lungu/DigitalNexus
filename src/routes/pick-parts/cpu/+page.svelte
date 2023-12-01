@@ -1,11 +1,11 @@
 <script>
 import { onMount } from 'svelte';
-import { goBack, checkForNullPrice } from "$lib/configurationHelper.js";
+import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
 
 let cpus = [];
 
 onMount(async () => {
-	const res = await fetch(`https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/cpu.json`);
+	const res = await fetch(datasetEndpoints.cpu);
 	cpus = await res.json();
 	cpus.length = 50; // reduce size to 50
 });
