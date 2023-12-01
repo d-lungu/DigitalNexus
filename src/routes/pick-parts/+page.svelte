@@ -4,6 +4,9 @@ import { browser } from "$app/environment";
 import MdiTrash from 'virtual:icons/mdi/trash';
 import {roundToTwoDigits} from '$lib/configurationHelper.js';
 
+
+
+
 function getLocalStorage(key) {
     if (browser) {
         return localStorage.getItem(key);
@@ -183,8 +186,8 @@ function startNew() {
     </div>
 
     <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/2"></div>
-        <div class="basis-1/2"><button class="btn">Add to cart</div>
+        <div class="basis-1/2 py-8"><a href="/grafico"><button class="btn"> Price Chart</button></a> </div>
+        <div class="basis-1/2 py-8"><button class="btn">Add to cart</div>
     </div>
     
 </div>

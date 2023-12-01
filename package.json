@@ -16,5 +16,8 @@
     "tailwindcss": "^3",
     "unplugin-icons": "^0.17.4",
     "vite": "^4"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
   }
 }
