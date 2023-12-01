@@ -53,7 +53,7 @@
 
     <div class="container flex flex-col items-center justify-center gap-y-2">
       <div class="font-bold ">It's shopping time!</div>
-      <div class="container mx-auto flex items-center justify-center gap-x-2">
+      <div class="container mx-auto flex flex-wrap items-center justify-center gap-x-2">
         <a href="/pick-parts/cpu"><button class="btn">CPUs</button></a>
         <a href="/pick-parts/cpu-cooler"><button class="btn">CPU Coolers</button></a>
         <a href="/pick-parts/gpu"><button class="btn">GPUs</button></a>
