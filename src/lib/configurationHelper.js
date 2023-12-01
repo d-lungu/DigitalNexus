@@ -21,3 +21,4 @@ export function checkForNullPrice(price) {
   }
   return roundToTwoDigits(price);
 }
+

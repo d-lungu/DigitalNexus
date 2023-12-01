@@ -16,63 +16,54 @@ var estimatedWattage = 0;
 
 var isCpuSelected = false;
 var isCpuSelected = getLocalStorage("cpuName") !== null;
-
 if (isCpuSelected) {
     totalCost += parseFloat(getLocalStorage("cpuPrice"));
 }
 
 var isCaseSelected = false;
 var isCaseSelected = getLocalStorage("caseName") !== null;
-
 if (isCaseSelected) {
     totalCost += parseFloat(getLocalStorage("cpuPrice"));
 }
 
 var isCpuCoolerSelected = false;
 var isCpuCoolerSelected = getLocalStorage("cpuCoolerName") !== null;
-
 if (isCpuCoolerSelected) {
     totalCost += parseFloat(getLocalStorage("cpuCoolerPrice"));
 }
 
 var isGpuSelected = false;
 var isGpuSelected = getLocalStorage("gpuName") !== null;
-
 if (isGpuSelected) {
     totalCost += parseFloat(getLocalStorage("gpuPrice"));
 }
 
 var isMoboSelected = false;
 var isMoboSelected = getLocalStorage("moboName") !== null;
-
 if (isMoboSelected) {
     totalCost += parseFloat(getLocalStorage("moboPrice"));
 }
 
 var isOsSelected = false;
-var isOsSelected = getLocalStorage("osName") !== null;
-
+var isOsSelected = getLocalStorage("osName") !== null
 if (isOsSelected) {
     totalCost += parseFloat(getLocalStorage("osPrice"));
 }
 
 var isPsuSelected = false;
 var isPsuSelected = getLocalStorage("psuName") !== null;
-
 if (isPsuSelected) {
     totalCost += parseFloat(getLocalStorage("psuPrice"));
 }
 
 var isRamSelected = false;
 var isRamSelected = getLocalStorage("ramName") !== null;
-
 if (isRamSelected) {
     totalCost += parseFloat(getLocalStorage("ramPrice"));
 }
 
 var isStorageSelected = false;
 var isStorageSelected = getLocalStorage("storageName") !== null;
-
 if (isStorageSelected) {
     totalCost += parseFloat(getLocalStorage("storagePrice"));
 }
@@ -85,9 +76,6 @@ function startNew() {
         }
     }
 }
-
-
-
 </script>
 
 <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl">
