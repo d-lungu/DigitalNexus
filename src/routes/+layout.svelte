@@ -10,6 +10,7 @@ let urlPcBuilding = "/pick-parts";
 let urlFindUs = "/#find-us";
 let urlAboutUs = "/about-us";
 let urlLogin = "/login";
+
 </script>
 
 <div class="navbar"> <!-- aggiungere "sticky top-0" per ancorarla al top della pagina-->
@@ -41,9 +42,9 @@ let urlLogin = "/login";
   </div>
   <div class="navbar-end">
 		<ul class="menu menu-horizontal px-1">
-      <li><a href="."><MdiMagnify/></a></li> <!-- TODO: aggiungere link e immagine per Cerca -->
-      <li><a href="."><MdiCart/></a></li> <!-- TODO: aggiungere link e immagine per Carrello -->
-			<li><a href="{urlLogin}"><MdiAccountCircle/></a></li> <!-- TODO: aggiungere link e immagine per Account -->
+      <li><a href="."><MdiMagnify/></a></li> <!-- TODO: aggiungere link per Cerca -->
+      <li><a href="."><MdiCart/></a></li> <!-- TODO: aggiungere link per Carrello -->
+			<li><a href="{urlLogin}"><MdiAccountCircle/></a></li>
     </ul>
   </div>
   

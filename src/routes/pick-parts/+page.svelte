@@ -4,14 +4,20 @@ import { browser } from "$app/environment";
 import MdiTrash from 'virtual:icons/mdi/trash';
 import {roundToTwoDigits} from '$lib/configurationHelper.js';
 
-
-
-
+// checks if the script is running on the client, and if it is, tries to obtain a certain local storage value
 function getLocalStorage(key) {
-    if (browser) {
-        return localStorage.getItem(key);
+  if (browser) {
+      return localStorage.getItem(key);
+  }
+  return null;
+}
+
+// if script is running on the client and the user accepts the dialog, the local storage will be cleared
+function startNew() {
+    if (browser && confirm("Are you sure you want to start a new configuration?")) {
+        localStorage.clear();
+        location.reload();
     }
-    return null;
 }
 
 var totalCost = 0;
@@ -71,14 +77,6 @@ if (isStorageSelected) {
     totalCost += parseFloat(getLocalStorage("storagePrice"));
 }
 
-function startNew() {
-    if (browser) {
-        if (confirm("Are you sure you want to start a new configuration?")) {
-            localStorage.clear();
-            location.reload();
-        }
-    }
-}
 </script>
 
 <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl">
@@ -185,6 +183,7 @@ function startNew() {
         <div class="basis-1/2">Total: ${roundToTwoDigits(totalCost)}</div>
     </div>
 
+    <!-- bottom buttons -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/2 py-8"><a href="/grafico"><button class="btn"> Price Chart</button></a> </div>
         <div class="basis-1/2 py-8"><button class="btn">Add to cart</div>

@@ -1,3 +1,4 @@
+<!-- mockup login page -->
 <div class="container mx-auto flex items-center justify-center">
     <main class="my-10">
         <div class="card shrink-0 shadow-2xl bg-base-100">

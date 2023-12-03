@@ -51,6 +51,7 @@
 
     <div class="divider"></div> 
 
+    <!-- sezione per navigare alle pagine dei singoli componenti -->
     <div class="container flex flex-col items-center justify-center gap-y-2">
       <div class="font-bold ">It's shopping time!</div>
       <div class="container mx-auto flex flex-wrap items-center justify-center gap-x-2">
@@ -68,6 +69,7 @@
 
     <div class="divider"></div> 
 
+    <!-- sezione per creare una nuova build -->
     <div class="container mx-auto flex items-center justify-center">
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Build your own PC!</p>
@@ -78,6 +80,7 @@
 
     <div class="divider"></div> 
 
+    <!-- sezione mappa -->
     <div id="find-us" class="container mx-auto flex items-center justify-center">
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Visit us</p>
@@ -88,6 +91,7 @@
 
     <div class="divider"></div> 
 
+    <!-- sezione iscrizione newsletter (solo mockup) -->
     <label class="form-control container mx-auto flex flex-col items-center justify-center">
       <div class="font-bold">
         Subscribe to the newsletter
