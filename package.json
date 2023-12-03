@@ -11,6 +11,7 @@
     "@sveltejs/kit": "^1",
     "autoprefixer": "^10",
     "daisyui": "^3",
+    "leaflet": "^1.9.4",
     "postcss": "^8",
     "svelte": "^4",
     "tailwindcss": "^3",

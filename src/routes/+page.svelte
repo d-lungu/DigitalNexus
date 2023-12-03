@@ -4,6 +4,7 @@
   import MdiStar from 'virtual:icons/mdi/star';
   import MdiTag from 'virtual:icons/mdi/tag';
   import placeholder_map from '$lib/assets/placeholder_map.png'; // TODO: fare una vera mappa
+  import LeafletMap from '$lib/LeafletMap.svelte';
 </script>
 <div class="container mx-auto flex items-center justify-center">
   <main class="my-8">
@@ -84,8 +85,10 @@
     <div id="find-us" class="container mx-auto flex items-center justify-center">
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Visit us</p>
-          <p>We have more than 30 stores throughout Italy also open on weekends. Enter your address and find out which store is closest to you</p>
-          <img src={placeholder_map} alt="map" />
+          <div class="container flex flex-col items-center justify-center gap-y-2">
+            <p>We have more than 30 stores throughout Italy also open on weekends.</p>
+            <LeafletMap />
+          </div>
       </main>
     </div>
 
