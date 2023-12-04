@@ -16,8 +16,9 @@
 }
 </script>
 
+{#if cartItems.length > 0}
 <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl" style="background:0;">
-    {#if cartItems.length > 0}
+    
     <div class="container flex flex-row m-auto items-center justify-center gap-x-4">
         <p class="text-2xl text-justify font-bold">Your shopping cart</p>
         <div class="tooltip" data-tip="Start new...">
@@ -44,7 +45,9 @@
         {/each}
         </tbody>
       </table>
-    {:else}
-        <p class="text-2xl text-justify font-bold">Your shopping cart is empty!</p>
-    {/if}
 </div>
+{:else}
+  <div class="container flex items-center justify-center m-auto">
+    <p class="text-2xl text-justify font-bold">Your shopping cart is empty!</p>
+  </div>
+{/if}

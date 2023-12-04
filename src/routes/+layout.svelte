@@ -11,9 +11,11 @@ let urlFindUs = "/#find-us";
 let urlAboutUs = "/about-us";
 let urlCart = "/cart";
 let urlLogin = "/login";
+const currentYear = new Date().getFullYear();
 
 </script>
 
+<div class="flex flex-col h-screen justify-between">
 <div class="navbar"> <!-- aggiungere "sticky top-0" per ancorarla al top della pagina-->
 	<!-- per mobile -->
   <div class="navbar-start">
@@ -43,7 +45,7 @@ let urlLogin = "/login";
   </div>
   <div class="navbar-end">
 		<ul class="menu menu-horizontal px-1">
-      <li><a href="."><MdiMagnify/></a></li> <!-- TODO: aggiungere link per Cerca -->
+      <!--<li><a href="."><MdiMagnify/></a></li> -->
       <li><a href="{urlCart}"><MdiCart/></a></li>
 			<li><a href="{urlLogin}"><MdiAccountCircle/></a></li>
     </ul>
@@ -52,3 +54,10 @@ let urlLogin = "/login";
 </div>
 
 <slot />
+
+<footer class="footer footer-center p-4 bg-base-300 text-base-content">
+  <aside>
+    <p>Copyright © {currentYear} - All right reserved by DigitalNexus S.p.a</p>
+  </aside>
+</footer>
+</div>
