@@ -22,6 +22,17 @@ export function checkForNullPrice(price) {
   return roundToTwoDigits(price);
 }
 
+export function addItemToCart(itemName, itemPrice) {
+  if (browser) {
+    var newList = [];
+    if (localStorage.getItem("cartItems") !== null) {
+      newList = JSON.parse(localStorage.getItem("cartItems"));
+    }
+    newList.push([itemName, itemPrice]);
+    localStorage.setItem("cartItems", JSON.stringify(newList));
+  }
+}
+
 export var datasetEndpoints = {
   cpu: "https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/cpu.json",
   case: "https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/case.json",

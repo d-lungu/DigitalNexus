@@ -2,7 +2,7 @@
 
 import { browser } from "$app/environment";
 import MdiTrash from 'virtual:icons/mdi/trash';
-import {roundToTwoDigits} from '$lib/configurationHelper.js';
+import {goBack, roundToTwoDigits, addItemToCart} from '$lib/configurationHelper.js';
 
 // checks if the script is running on the client, and if it is, tries to obtain a certain local storage value
 function getLocalStorage(key) {
@@ -15,7 +15,11 @@ function getLocalStorage(key) {
 // if script is running on the client and the user accepts the dialog, the local storage will be cleared
 function startNew() {
     if (browser && confirm("Are you sure you want to start a new configuration?")) {
+        var tmpCartItems = localStorage.getItem("cartItems");
         localStorage.clear();
+        if (tmpCartItems !== null && tmpCartItems !== "null") {
+            localStorage.setItem("cartItems", tmpCartItems);
+        }
         location.reload();
     }
 }
@@ -32,7 +36,7 @@ if (isCpuSelected) {
 var isCaseSelected = false;
 var isCaseSelected = getLocalStorage("caseName") !== null;
 if (isCaseSelected) {
-    totalCost += parseFloat(getLocalStorage("cpuPrice"));
+    totalCost += parseFloat(getLocalStorage("casePrice"));
 }
 
 var isCpuCoolerSelected = false;
@@ -75,6 +79,35 @@ var isStorageSelected = false;
 var isStorageSelected = getLocalStorage("storageName") !== null;
 if (isStorageSelected) {
     totalCost += parseFloat(getLocalStorage("storagePrice"));
+}
+
+function addAllItemsToCart() {
+    if (browser && getLocalStorage("cartItems") !== null) {
+        if (!confirm("You already have items in your shopping cart. You will delete your old card contents if you proceed. Are you sure?")) {
+            return;
+        }
+    }
+    localStorage.removeItem("cartItems")
+    if (isCpuSelected)
+        addItemToCart(getLocalStorage("cpuName"), getLocalStorage("cpuPrice"));
+    if (isCaseSelected)
+        addItemToCart(getLocalStorage("caseName"), getLocalStorage("casePrice"));
+    if (isCpuCoolerSelected)
+        addItemToCart(getLocalStorage("cpuCoolerName"), getLocalStorage("cpuCoolerPrice"));
+    if (isGpuSelected)
+        addItemToCart(getLocalStorage("gpuName"), getLocalStorage("gpuPrice"));
+    if (isMoboSelected)
+        addItemToCart(getLocalStorage("moboName"), getLocalStorage("moboPrice"));
+    if (isOsSelected)
+        addItemToCart(getLocalStorage("osName"), getLocalStorage("osPrice"));
+    if (isPsuSelected)
+        addItemToCart(getLocalStorage("psuName"), getLocalStorage("psuPrice"));
+    if (isRamSelected)
+        addItemToCart(getLocalStorage("ramName"), getLocalStorage("ramPrice"));
+    if (isStorageSelected)
+        addItemToCart(getLocalStorage("storageName"), getLocalStorage("storagePrice"));
+
+    goBack("/cart");
 }
 
 </script>
@@ -186,7 +219,7 @@ if (isStorageSelected) {
     <!-- bottom buttons -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/2 py-8"><a href="/grafico"><button class="btn"> Price Chart</button></a> </div>
-        <div class="basis-1/2 py-8"><button class="btn">Add to cart</div>
+        <div class="basis-1/2 py-8"><button class="btn" on:click={addAllItemsToCart}>Add to cart</div>
     </div>
     
 </div>
