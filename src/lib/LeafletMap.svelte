@@ -1,23 +1,28 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
     import { browser } from '$app/environment';
+    import StoresDataset from "$lib/assets/store_locations.json";
 
     let mapElement;
     let map;
+    let storesData = StoresDataset.luoghi;
 
     onMount(async () => {
         if(browser) {
             const leaflet = await import('leaflet');
 
-            map = leaflet.map(mapElement).setView([45.5436599, 10.1824793], 10);
+            map = leaflet.map(mapElement).setView([41.9028, 12.4964], 5);
 
             leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-
-            //leaflet.marker([51.5, -0.09]).addTo(map)
-            //    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-            //    .openPopup();
+            
+            for (var i = 0; i < storesData.length; i++) {
+                const coordinate = storesData[i].coordinate;
+                const name = storesData[i].nome;
+                leaflet.marker([coordinate.latitudine, coordinate.longitudine]).addTo(map)
+                    .bindPopup(name);
+            }
         }
     });
 
