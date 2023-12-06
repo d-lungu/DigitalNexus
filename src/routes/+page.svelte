@@ -4,7 +4,7 @@
   import MdiStar from 'virtual:icons/mdi/star';
   import MdiTag from 'virtual:icons/mdi/tag';
   import placeholder_map from '$lib/assets/placeholder_map.png'; // TODO: fare una vera mappa
-  import LeafletMap from '$lib/LeafletMap.svelte';
+import LeafletMap from '$lib/LeafletMap.svelte';
 </script>
 <div class="container mx-auto flex items-center justify-center">
   <main class="my-8">
@@ -52,9 +52,9 @@
 
     <div class="divider"></div> 
 
-    <!-- sezione per navigare alle pagine dei singoli componenti -->
+<!-- sezione per navigare alle pagine dei singoli componenti -->
     <div class="container flex flex-col items-center justify-center gap-y-2">
-      <div class="font-bold ">It's shopping time!</div>
+      <div class="font-bold py-4">It's shopping time!</div>
       <div class="container mx-auto flex flex-wrap items-center justify-center gap-x-2">
         <a href="/pick-parts/cpu"><button class="btn">CPUs</button></a>
         <a href="/pick-parts/cpu-cooler"><button class="btn">CPU Coolers</button></a>
@@ -70,10 +70,10 @@
 
     <div class="divider"></div> 
 
-    <!-- sezione per creare una nuova build -->
+<!-- sezione per creare una nuova build -->
     <div class="container mx-auto flex items-center justify-center">
       <main class="container flex flex-col items-center justify-center">
-          <p class="font-bold">Build your own PC!</p>
+          <p class="font-bold py-4">Build your own PC!</p>
           <p>We provide part selection, pricing, and compatibility guidance for do-it-yourself computer builders.</p>
           <a href="/pick-parts"><button class="btn">Start your build</button></a>
       </main>
@@ -81,20 +81,20 @@
 
     <div class="divider"></div> 
 
-    <!-- sezione mappa -->
+<!-- sezione mappa -->
     <div id="find-us" class="container mx-auto flex items-center justify-center">
       <main class="container flex flex-col items-center justify-center">
           <p class="font-bold">Visit us</p>
           <div class="container flex flex-col items-center justify-center gap-y-2">
             <p>We have more than 30 stores throughout Italy also open on weekends.</p>
-            <LeafletMap />
-          </div>
+          <LeafletMap />
+</div>
       </main>
     </div>
 
     <div class="divider"></div> 
 
-    <!-- sezione iscrizione newsletter (solo mockup) -->
+<!-- sezione iscrizione newsletter (solo mockup) -->
     <label class="form-control container mx-auto flex flex-col items-center justify-center">
       <div class="font-bold">
         Subscribe to the newsletter
