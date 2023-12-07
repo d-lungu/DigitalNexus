@@ -2,7 +2,7 @@
     "type": "module",
     "scripts": {
         "format": "prettier --write .",
-        "dev": "vite dev",
+        "dev": "prettier --write . && vite dev",
         "build": "vite build",
         "preview": "vite preview"
     },
