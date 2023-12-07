@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let rams = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.ram);
-        rams = await res.json();
-        rams.length = 50; // reduce size to 50
+        rams = await fetchEndpointData(datasetEndpoints.ram);
     });
     
     function selectRam(name, price) {

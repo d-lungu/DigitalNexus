@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let gpus = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.gpu);
-        gpus = await res.json();
-        gpus.length = 50; // reduce size to 50
+        gpus = await fetchEndpointData(datasetEndpoints.gpu);
     });
     
     function selectGpu(name, price) {

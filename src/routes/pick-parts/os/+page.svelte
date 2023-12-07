@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let oss = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.os);
-        oss = await res.json();
-        oss.length = 50; // reduce size to 50
+        oss = await fetchEndpointData(datasetEndpoints.os);
     });
     
     function selectOs(name, price) {

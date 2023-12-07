@@ -1,4 +1,17 @@
+import { browser } from '$app/environment';
 import { goto } from '$app/navigation';
+
+/** @param {string} endpoint */
+export async function fetchEndpointData(endpoint) {
+  const MAX_ITEMS = 500; // performance reasons
+  let jsonData = await fetch(endpoint).then(res => res.json());
+  
+  if (jsonData.length > MAX_ITEMS)
+    jsonData.length = MAX_ITEMS; // reduce size to max
+  
+  return jsonData;
+}
+
 
 /** @param {string} route */
 export function goBack(route) {
@@ -23,6 +36,9 @@ export function checkForNullPrice(price) {
 }
 
 export function addItemToCart(itemName, itemPrice) {
+  if (browser === null) {
+    browser = typeof window !== 'undefined' ? true : null;
+  }
   if (browser) {
     var newList = [];
     if (localStorage.getItem("cartItems") !== null) {

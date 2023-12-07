@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let storages = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.storage);
-        storages = await res.json();
-        storages.length = 50; // reduce size to 50
+        storages = await fetchEndpointData(datasetEndpoints.storage)
     });
     
     function selectStorage(name, price) {

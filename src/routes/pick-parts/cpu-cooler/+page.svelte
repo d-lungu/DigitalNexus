@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let cpuCoolers = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.cpucooler);
-        cpuCoolers = await res.json();
-        cpuCoolers.length = 50; // reduce size to 50
+      cpuCoolers = await fetchEndpointData(datasetEndpoints.cpucooler);
     });
     
     function selectCpuCooler(name, price) {

@@ -4,6 +4,10 @@ import { browser } from "$app/environment";
 import MdiTrash from 'virtual:icons/mdi/trash';
 import {goBack, roundToTwoDigits, addItemToCart} from '$lib/configurationHelper.js';
 
+if (browser === null) {
+    browser = typeof window !== 'undefined' ? true : null;
+}
+
 // checks if the script is running on the client, and if it is, tries to obtain a certain local storage value
 function getLocalStorage(key) {
   if (browser) {

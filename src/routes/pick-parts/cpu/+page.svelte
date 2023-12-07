@@ -1,13 +1,11 @@
 <script>
 import { onMount } from 'svelte';
-import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
 
 let cpus = [];
 
 onMount(async () => {
-	const res = await fetch(datasetEndpoints.cpu);
-	cpus = await res.json();
-	cpus.length = 50; // reduce size to 50
+	cpus = await fetchEndpointData(datasetEndpoints.cpu);
 });
 
 // function to change the CPU selection in local storage

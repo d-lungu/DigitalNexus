@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let psus = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.psu);
-        psus = await res.json();
-        psus.length = 50; // reduce size to 50
+        psus = await fetchEndpointData(datasetEndpoints.psu);
     });
     
     function selectPsu(name, price) {

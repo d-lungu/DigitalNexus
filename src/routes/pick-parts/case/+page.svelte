@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let cases = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.case);
-        cases = await res.json();
-        cases.length = 50; // reduce size to 50
+        cases = await fetchEndpointData(datasetEndpoints.case);
     });
     
     function selectCase(name, price) {

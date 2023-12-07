@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    import { goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
+    import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
     let mobos = [];
     
     onMount(async () => {
-        const res = await fetch(datasetEndpoints.mobo);
-        mobos = await res.json();
-        mobos.length = 50; // reduce size to 50
+        mobos = await fetchEndpointData(datasetEndpoints.mobo);
     });
     
     function selectMobo(name, price) {
