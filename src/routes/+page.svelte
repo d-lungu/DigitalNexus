@@ -3,7 +3,6 @@
     import MdiCreditCardOutline from 'virtual:icons/mdi/credit-card-outline'
     import MdiStar from 'virtual:icons/mdi/star'
     import MdiTag from 'virtual:icons/mdi/tag'
-    import placeholder_map from '$lib/assets/placeholder_map.png' // TODO: fare una vera mappa
     import LeafletMap from '$lib/LeafletMap.svelte'
 </script>
 
