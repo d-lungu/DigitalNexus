@@ -2,10 +2,12 @@
 import { onMount } from 'svelte';
 import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
 
+let original = [];
+let searchString = '';
 let cpus = [];
 
 onMount(async () => {
-	cpus = await fetchEndpointData(datasetEndpoints.cpu);
+	original = cpus = await fetchEndpointData(datasetEndpoints.cpu);
 });
 
 // function to change the CPU selection in local storage
@@ -19,6 +21,12 @@ function selectCpu(name, price, tdp) {
 </script>
 <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl" style="background:0;">
 	<p class="text-2xl text-justify font-bold">Choose your CPU</p>
+
+	<div class="container flex items-center justify-center">
+		<input type="search" bind:value={searchString} on:input={() => {
+			cpus = original.filter((x) => x.name.toLowerCase().includes(searchString.toLowerCase()));
+		}} placeholder="Search..." />
+	</div>
 
 	<table class="table">
 		<thead>

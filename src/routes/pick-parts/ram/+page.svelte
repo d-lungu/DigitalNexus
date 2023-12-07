@@ -2,10 +2,12 @@
     import { onMount } from 'svelte';
     import { fetchEndpointData, goBack, checkForNullPrice, datasetEndpoints } from "$lib/configurationHelper.js";
     
+    let original = [];
+    let searchString = '';
     let rams = [];
     
     onMount(async () => {
-        rams = await fetchEndpointData(datasetEndpoints.ram);
+      original = rams = await fetchEndpointData(datasetEndpoints.ram);
     });
     
     function selectRam(name, price) {
@@ -17,6 +19,12 @@
     </script>
     <div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl" style="background:0;">
         <p class="text-2xl text-justify font-bold">Choose your RAM</p>
+
+        <div class="container flex items-center justify-center">
+          <input type="search" bind:value={searchString} on:input={() => {
+            rams = original.filter((x) => x.name.toLowerCase().includes(searchString.toLowerCase()));
+          }} placeholder="Search..." />
+        </div>
     
         <table class="table">
             <thead>
