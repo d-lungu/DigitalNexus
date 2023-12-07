@@ -74,9 +74,9 @@
                     <td>{cpu.tdp} W</td>
                 </tr>
             {:else}
-                <tr>
-                    <td>Loading...</td>
-                </tr>
+                <div class="container flex flex-row">
+                    <span class="loading loading-dots loading-xs"></span>
+                </div>
             {/each}
         </tbody>
     </table>

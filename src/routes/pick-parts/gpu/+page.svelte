@@ -28,7 +28,6 @@
     style="background:0;"
 >
     <p class="text-2xl text-justify font-bold">Choose your GPU</p>
-
     <div class="container flex items-center justify-center">
         <input
             type="search"
@@ -75,9 +74,9 @@
                     <td>{gpu.length} mm</td>
                 </tr>
             {:else}
-                <tr>
-                    <td>Loading...</td>
-                </tr>
+                <div class="container flex flex-row">
+                    <span class="loading loading-dots loading-xs"></span>
+                </div>
             {/each}
         </tbody>
     </table>
