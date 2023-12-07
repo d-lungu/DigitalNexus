@@ -38,7 +38,7 @@
                 <div class="form-control mt-6">
                     <button class="btn btn-primary">Login</button>
                     <!-- svelte-ignore a11y-invalid-attribute -->
-                    <a href="#" >Sign-up</a>
+                    <a href="#">Sign-up</a>
                 </div>
             </form>
         </div>

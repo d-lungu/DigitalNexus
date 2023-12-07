@@ -1,124 +1,161 @@
 <script>
+    import { browser } from '$app/environment'
+    import MdiTrash from 'virtual:icons/mdi/trash'
+    import {
+        goBack,
+        roundToTwoDigits,
+        addItemToCart,
+    } from '$lib/configurationHelper.js'
 
-import { browser } from "$app/environment";
-import MdiTrash from 'virtual:icons/mdi/trash';
-import {goBack, roundToTwoDigits, addItemToCart} from '$lib/configurationHelper.js';
-
-if (browser === null) {
-    browser = typeof window !== 'undefined' ? true : null;
-}
-
-// checks if the script is running on the client, and if it is, tries to obtain a certain local storage value
-function getLocalStorage(key) {
-  if (browser) {
-      return localStorage.getItem(key);
-  }
-  return null;
-}
-
-// if script is running on the client and the user accepts the dialog, the local storage will be cleared
-function startNew() {
-    if (browser && confirm("Are you sure you want to start a new configuration?")) {
-        var tmpCartItems = localStorage.getItem("cartItems");
-        localStorage.clear();
-        if (tmpCartItems !== null && tmpCartItems !== "null") {
-            localStorage.setItem("cartItems", tmpCartItems);
-        }
-        location.reload();
+    if (browser === null) {
+        browser = typeof window !== 'undefined' ? true : null
     }
-}
 
-var totalCost = 0;
-var estimatedWattage = 0;
+    // checks if the script is running on the client, and if it is, tries to obtain a certain local storage value
+    function getLocalStorage(key) {
+        if (browser) {
+            return localStorage.getItem(key)
+        }
+        return null
+    }
 
-var isCpuSelected = false;
-var isCpuSelected = getLocalStorage("cpuName") !== null;
-if (isCpuSelected) {
-    totalCost += parseFloat(getLocalStorage("cpuPrice"));
-}
-
-var isCaseSelected = false;
-var isCaseSelected = getLocalStorage("caseName") !== null;
-if (isCaseSelected) {
-    totalCost += parseFloat(getLocalStorage("casePrice"));
-}
-
-var isCpuCoolerSelected = false;
-var isCpuCoolerSelected = getLocalStorage("cpuCoolerName") !== null;
-if (isCpuCoolerSelected) {
-    totalCost += parseFloat(getLocalStorage("cpuCoolerPrice"));
-}
-
-var isGpuSelected = false;
-var isGpuSelected = getLocalStorage("gpuName") !== null;
-if (isGpuSelected) {
-    totalCost += parseFloat(getLocalStorage("gpuPrice"));
-}
-
-var isMoboSelected = false;
-var isMoboSelected = getLocalStorage("moboName") !== null;
-if (isMoboSelected) {
-    totalCost += parseFloat(getLocalStorage("moboPrice"));
-}
-
-var isOsSelected = false;
-var isOsSelected = getLocalStorage("osName") !== null
-if (isOsSelected) {
-    totalCost += parseFloat(getLocalStorage("osPrice"));
-}
-
-var isPsuSelected = false;
-var isPsuSelected = getLocalStorage("psuName") !== null;
-if (isPsuSelected) {
-    totalCost += parseFloat(getLocalStorage("psuPrice"));
-}
-
-var isRamSelected = false;
-var isRamSelected = getLocalStorage("ramName") !== null;
-if (isRamSelected) {
-    totalCost += parseFloat(getLocalStorage("ramPrice"));
-}
-
-var isStorageSelected = false;
-var isStorageSelected = getLocalStorage("storageName") !== null;
-if (isStorageSelected) {
-    totalCost += parseFloat(getLocalStorage("storagePrice"));
-}
-
-function addAllItemsToCart() {
-    if (browser && getLocalStorage("cartItems") !== null) {
-        if (!confirm("You already have items in your shopping cart. You will delete your old card contents if you proceed. Are you sure?")) {
-            return;
+    // if script is running on the client and the user accepts the dialog, the local storage will be cleared
+    function startNew() {
+        if (
+            browser &&
+            confirm('Are you sure you want to start a new configuration?')
+        ) {
+            var tmpCartItems = localStorage.getItem('cartItems')
+            localStorage.clear()
+            if (tmpCartItems !== null && tmpCartItems !== 'null') {
+                localStorage.setItem('cartItems', tmpCartItems)
+            }
+            location.reload()
         }
     }
-    localStorage.removeItem("cartItems")
-    if (isCpuSelected)
-        addItemToCart(getLocalStorage("cpuName"), getLocalStorage("cpuPrice"));
-    if (isCaseSelected)
-        addItemToCart(getLocalStorage("caseName"), getLocalStorage("casePrice"));
-    if (isCpuCoolerSelected)
-        addItemToCart(getLocalStorage("cpuCoolerName"), getLocalStorage("cpuCoolerPrice"));
-    if (isGpuSelected)
-        addItemToCart(getLocalStorage("gpuName"), getLocalStorage("gpuPrice"));
-    if (isMoboSelected)
-        addItemToCart(getLocalStorage("moboName"), getLocalStorage("moboPrice"));
-    if (isOsSelected)
-        addItemToCart(getLocalStorage("osName"), getLocalStorage("osPrice"));
-    if (isPsuSelected)
-        addItemToCart(getLocalStorage("psuName"), getLocalStorage("psuPrice"));
-    if (isRamSelected)
-        addItemToCart(getLocalStorage("ramName"), getLocalStorage("ramPrice"));
-    if (isStorageSelected)
-        addItemToCart(getLocalStorage("storageName"), getLocalStorage("storagePrice"));
 
-    goBack("/cart");
-}
+    var totalCost = 0
+    var estimatedWattage = 0
 
+    var isCpuSelected = false
+    var isCpuSelected = getLocalStorage('cpuName') !== null
+    if (isCpuSelected) {
+        totalCost += parseFloat(getLocalStorage('cpuPrice'))
+    }
+
+    var isCaseSelected = false
+    var isCaseSelected = getLocalStorage('caseName') !== null
+    if (isCaseSelected) {
+        totalCost += parseFloat(getLocalStorage('casePrice'))
+    }
+
+    var isCpuCoolerSelected = false
+    var isCpuCoolerSelected = getLocalStorage('cpuCoolerName') !== null
+    if (isCpuCoolerSelected) {
+        totalCost += parseFloat(getLocalStorage('cpuCoolerPrice'))
+    }
+
+    var isGpuSelected = false
+    var isGpuSelected = getLocalStorage('gpuName') !== null
+    if (isGpuSelected) {
+        totalCost += parseFloat(getLocalStorage('gpuPrice'))
+    }
+
+    var isMoboSelected = false
+    var isMoboSelected = getLocalStorage('moboName') !== null
+    if (isMoboSelected) {
+        totalCost += parseFloat(getLocalStorage('moboPrice'))
+    }
+
+    var isOsSelected = false
+    var isOsSelected = getLocalStorage('osName') !== null
+    if (isOsSelected) {
+        totalCost += parseFloat(getLocalStorage('osPrice'))
+    }
+
+    var isPsuSelected = false
+    var isPsuSelected = getLocalStorage('psuName') !== null
+    if (isPsuSelected) {
+        totalCost += parseFloat(getLocalStorage('psuPrice'))
+    }
+
+    var isRamSelected = false
+    var isRamSelected = getLocalStorage('ramName') !== null
+    if (isRamSelected) {
+        totalCost += parseFloat(getLocalStorage('ramPrice'))
+    }
+
+    var isStorageSelected = false
+    var isStorageSelected = getLocalStorage('storageName') !== null
+    if (isStorageSelected) {
+        totalCost += parseFloat(getLocalStorage('storagePrice'))
+    }
+
+    function addAllItemsToCart() {
+        if (browser && getLocalStorage('cartItems') !== null) {
+            if (
+                !confirm(
+                    'You already have items in your shopping cart. You will delete your old card contents if you proceed. Are you sure?'
+                )
+            ) {
+                return
+            }
+        }
+        localStorage.removeItem('cartItems')
+        if (isCpuSelected)
+            addItemToCart(
+                getLocalStorage('cpuName'),
+                getLocalStorage('cpuPrice')
+            )
+        if (isCaseSelected)
+            addItemToCart(
+                getLocalStorage('caseName'),
+                getLocalStorage('casePrice')
+            )
+        if (isCpuCoolerSelected)
+            addItemToCart(
+                getLocalStorage('cpuCoolerName'),
+                getLocalStorage('cpuCoolerPrice')
+            )
+        if (isGpuSelected)
+            addItemToCart(
+                getLocalStorage('gpuName'),
+                getLocalStorage('gpuPrice')
+            )
+        if (isMoboSelected)
+            addItemToCart(
+                getLocalStorage('moboName'),
+                getLocalStorage('moboPrice')
+            )
+        if (isOsSelected)
+            addItemToCart(getLocalStorage('osName'), getLocalStorage('osPrice'))
+        if (isPsuSelected)
+            addItemToCart(
+                getLocalStorage('psuName'),
+                getLocalStorage('psuPrice')
+            )
+        if (isRamSelected)
+            addItemToCart(
+                getLocalStorage('ramName'),
+                getLocalStorage('ramPrice')
+            )
+        if (isStorageSelected)
+            addItemToCart(
+                getLocalStorage('storageName'),
+                getLocalStorage('storagePrice')
+            )
+
+        goBack('/cart')
+    }
 </script>
 
-<div class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl">
+<div
+    class="container flex flex-col mx-auto px-2 items-center justify-center gap-y-2 shadow-xl"
+>
     <!-- Title -->
-    <div class="container flex flex-row m-auto items-center justify-center gap-x-4">
+    <div
+        class="container flex flex-row m-auto items-center justify-center gap-x-4"
+    >
         <p class="text-2xl text-justify font-bold">Choose your parts</p>
         <div class="tooltip" data-tip="Start new...">
             <button class="btn" on:click={startNew}><MdiTrash /></button>
@@ -137,81 +174,121 @@ function addAllItemsToCart() {
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">CPU</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/cpu/">{isCpuSelected ? getLocalStorage("cpuName") : "Select"}</a>
+            <a href="./pick-parts/cpu/"
+                >{isCpuSelected ? getLocalStorage('cpuName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isCpuSelected ? "$" + getLocalStorage("cpuPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isCpuSelected ? '$' + getLocalStorage('cpuPrice') : ''}
+        </div>
     </div>
 
     <!-- CPU Cooler Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">CPU Cooler</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/cpu-cooler/">{isCpuCoolerSelected ? getLocalStorage("cpuCoolerName") : "Select"}</a>
+            <a href="./pick-parts/cpu-cooler/"
+                >{isCpuCoolerSelected
+                    ? getLocalStorage('cpuCoolerName')
+                    : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isCpuCoolerSelected ? "$" + getLocalStorage("cpuCoolerPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isCpuCoolerSelected ? '$' + getLocalStorage('cpuCoolerPrice') : ''}
+        </div>
     </div>
 
     <!-- Mobo Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">Motherboard</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/mobo/">{isMoboSelected ? getLocalStorage("moboName") : "Select"}</a>
+            <a href="./pick-parts/mobo/"
+                >{isMoboSelected ? getLocalStorage('moboName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isMoboSelected ? "$" + getLocalStorage("moboPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isMoboSelected ? '$' + getLocalStorage('moboPrice') : ''}
+        </div>
     </div>
 
     <!-- GPU Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">GPU</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/gpu/">{isGpuSelected ? getLocalStorage("gpuName") : "Select"}</a>
+            <a href="./pick-parts/gpu/"
+                >{isGpuSelected ? getLocalStorage('gpuName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isGpuSelected ? "$" + getLocalStorage("gpuPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isGpuSelected ? '$' + getLocalStorage('gpuPrice') : ''}
+        </div>
     </div>
 
     <!-- RAM Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">RAM</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/ram/">{isRamSelected ? getLocalStorage("ramName") : "Select"}</a>
+            <a href="./pick-parts/ram/"
+                >{isRamSelected ? getLocalStorage('ramName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isRamSelected ? "$" + getLocalStorage("ramPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isRamSelected ? '$' + getLocalStorage('ramPrice') : ''}
+        </div>
     </div>
 
     <!-- Case Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">Case</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/case/">{isCaseSelected ? getLocalStorage("caseName") : "Select"}</a>
+            <a href="./pick-parts/case/"
+                >{isCaseSelected ? getLocalStorage('caseName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isCaseSelected ? "$" + getLocalStorage("casePrice") : ""}</div>
+        <div class="basis-1/2">
+            {isCaseSelected ? '$' + getLocalStorage('casePrice') : ''}
+        </div>
     </div>
 
     <!-- Storage Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">Storage</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/storage/">{isStorageSelected ? getLocalStorage("storageName") : "Select"}</a>
+            <a href="./pick-parts/storage/"
+                >{isStorageSelected
+                    ? getLocalStorage('storageName')
+                    : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isStorageSelected ? "$" + getLocalStorage("storagePrice") : ""}</div>
+        <div class="basis-1/2">
+            {isStorageSelected ? '$' + getLocalStorage('storagePrice') : ''}
+        </div>
     </div>
 
     <!-- PSU Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">Power Supply</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/psu/">{isPsuSelected ? getLocalStorage("psuName") : "Select"}</a>
+            <a href="./pick-parts/psu/"
+                >{isPsuSelected ? getLocalStorage('psuName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isPsuSelected ? "$" + getLocalStorage("psuPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isPsuSelected ? '$' + getLocalStorage('psuPrice') : ''}
+        </div>
     </div>
 
     <!-- OS Selection -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/4">Operating System</div>
         <div class="basis-1/4">
-            <a href="./pick-parts/os/">{isOsSelected ? getLocalStorage("osName") : "Select"}</a>
+            <a href="./pick-parts/os/"
+                >{isOsSelected ? getLocalStorage('osName') : 'Select'}</a
+            >
         </div>
-        <div class="basis-1/2">{isOsSelected ? "$" + getLocalStorage("osPrice") : ""}</div>
+        <div class="basis-1/2">
+            {isOsSelected ? '$' + getLocalStorage('osPrice') : ''}
+        </div>
     </div>
 
     <!-- Results -->
@@ -222,8 +299,12 @@ function addAllItemsToCart() {
 
     <!-- bottom buttons -->
     <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/2 py-8"><a href="/grafico"><button class="btn"> Price Chart</button></a> </div>
-        <div class="basis-1/2 py-8"><button class="btn" on:click={addAllItemsToCart}>Add to cart</div>
+        <div class="basis-1/2 py-8">
+            <a href="/grafico"><button class="btn"> Price Chart</button></a>
+        </div>
+        <div class="basis-1/2 py-8">
+            <button class="btn" on:click={addAllItemsToCart}>Add to cart</button
+            >
+        </div>
     </div>
-    
 </div>

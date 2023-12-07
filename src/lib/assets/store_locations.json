@@ -1,291 +1,291 @@
 {
     "luoghi": [
-      {
-        "nome": "Negozio 1",
-        "coordinate": {
-          "latitudine": 41.9028,
-          "longitudine": 12.4964
+        {
+            "nome": "Negozio 1",
+            "coordinate": {
+                "latitudine": 41.9028,
+                "longitudine": 12.4964
+            }
+        },
+        {
+            "nome": "Negozio 2",
+            "coordinate": {
+                "latitudine": 45.4642,
+                "longitudine": 9.19
+            }
+        },
+        {
+            "nome": "Negozio 3",
+            "coordinate": {
+                "latitudine": 40.8522,
+                "longitudine": 14.2681
+            }
+        },
+        {
+            "nome": "Negozio 4",
+            "coordinate": {
+                "latitudine": 44.4071,
+                "longitudine": 8.9339
+            }
+        },
+        {
+            "nome": "Negozio 5",
+            "coordinate": {
+                "latitudine": 37.5079,
+                "longitudine": 15.083
+            }
+        },
+        {
+            "nome": "Negozio 6",
+            "coordinate": {
+                "latitudine": 38.1157,
+                "longitudine": 13.3615
+            }
+        },
+        {
+            "nome": "Negozio 7",
+            "coordinate": {
+                "latitudine": 42.3415,
+                "longitudine": 13.4056
+            }
+        },
+        {
+            "nome": "Negozio 8",
+            "coordinate": {
+                "latitudine": 40.8518,
+                "longitudine": 14.2681
+            }
+        },
+        {
+            "nome": "Negozio 9",
+            "coordinate": {
+                "latitudine": 45.0703,
+                "longitudine": 7.6869
+            }
+        },
+        {
+            "nome": "Negozio 10",
+            "coordinate": {
+                "latitudine": 45.4641,
+                "longitudine": 9.191
+            }
+        },
+        {
+            "nome": "Negozio 11",
+            "coordinate": {
+                "latitudine": 37.5074,
+                "longitudine": 15.083
+            }
+        },
+        {
+            "nome": "Negozio 12",
+            "coordinate": {
+                "latitudine": 44.4989,
+                "longitudine": 11.3276
+            }
+        },
+        {
+            "nome": "Negozio 13",
+            "coordinate": {
+                "latitudine": 43.7696,
+                "longitudine": 11.2558
+            }
+        },
+        {
+            "nome": "Negozio 14",
+            "coordinate": {
+                "latitudine": 45.4408,
+                "longitudine": 10.9944
+            }
+        },
+        {
+            "nome": "Negozio 15",
+            "coordinate": {
+                "latitudine": 42.504,
+                "longitudine": 12.6466
+            }
+        },
+        {
+            "nome": "Negozio 16",
+            "coordinate": {
+                "latitudine": 40.8528,
+                "longitudine": 14.2681
+            }
+        },
+        {
+            "nome": "Negozio 17",
+            "coordinate": {
+                "latitudine": 44.4074,
+                "longitudine": 8.9337
+            }
+        },
+        {
+            "nome": "Negozio 18",
+            "coordinate": {
+                "latitudine": 37.509,
+                "longitudine": 15.083
+            }
+        },
+        {
+            "nome": "Negozio 19",
+            "coordinate": {
+                "latitudine": 38.115,
+                "longitudine": 13.362
+            }
+        },
+        {
+            "nome": "Negozio 20",
+            "coordinate": {
+                "latitudine": 42.3425,
+                "longitudine": 13.4051
+            }
+        },
+        {
+            "nome": "Negozio 21",
+            "coordinate": {
+                "latitudine": 40.8525,
+                "longitudine": 14.2679
+            }
+        },
+        {
+            "nome": "Negozio 22",
+            "coordinate": {
+                "latitudine": 45.07,
+                "longitudine": 7.6865
+            }
+        },
+        {
+            "nome": "Negozio 23",
+            "coordinate": {
+                "latitudine": 45.4639,
+                "longitudine": 9.1905
+            }
+        },
+        {
+            "nome": "Negozio 24",
+            "coordinate": {
+                "latitudine": 37.507,
+                "longitudine": 15.0835
+            }
+        },
+        {
+            "nome": "Negozio 25",
+            "coordinate": {
+                "latitudine": 44.4985,
+                "longitudine": 11.3271
+            }
+        },
+        {
+            "nome": "Negozio 26",
+            "coordinate": {
+                "latitudine": 43.77,
+                "longitudine": 11.256
+            }
+        },
+        {
+            "nome": "Negozio 27",
+            "coordinate": {
+                "latitudine": 45.4405,
+                "longitudine": 10.9939
+            }
+        },
+        {
+            "nome": "Negozio 28",
+            "coordinate": {
+                "latitudine": 42.5035,
+                "longitudine": 12.6461
+            }
+        },
+        {
+            "nome": "Negozio 29",
+            "coordinate": {
+                "latitudine": 40.853,
+                "longitudine": 14.2679
+            }
+        },
+        {
+            "nome": "Negozio 30",
+            "coordinate": {
+                "latitudine": 44.407,
+                "longitudine": 8.9335
+            }
+        },
+        {
+            "nome": "Negozio 31",
+            "coordinate": {
+                "latitudine": 37.5085,
+                "longitudine": 15.0835
+            }
+        },
+        {
+            "nome": "Negozio 32",
+            "coordinate": {
+                "latitudine": 38.1145,
+                "longitudine": 13.3625
+            }
+        },
+        {
+            "nome": "Negozio 33",
+            "coordinate": {
+                "latitudine": 42.343,
+                "longitudine": 13.4056
+            }
+        },
+        {
+            "nome": "Negozio 34",
+            "coordinate": {
+                "latitudine": 40.8535,
+                "longitudine": 14.2676
+            }
+        },
+        {
+            "nome": "Negozio 35",
+            "coordinate": {
+                "latitudine": 45.0695,
+                "longitudine": 7.6861
+            }
+        },
+        {
+            "nome": "Negozio 36",
+            "coordinate": {
+                "latitudine": 45.4635,
+                "longitudine": 9.191
+            }
+        },
+        {
+            "nome": "Negozio 37",
+            "coordinate": {
+                "latitudine": 37.5065,
+                "longitudine": 15.0839
+            }
+        },
+        {
+            "nome": "Negozio 38",
+            "coordinate": {
+                "latitudine": 44.498,
+                "longitudine": 11.3266
+            }
+        },
+        {
+            "nome": "Negozio 39",
+            "coordinate": {
+                "latitudine": 43.7705,
+                "longitudine": 11.2563
+            }
+        },
+        {
+            "nome": "Negozio 40",
+            "coordinate": {
+                "latitudine": 45.44,
+                "longitudine": 10.9934
+            }
+        },
+        {
+            "nome": "Negozio 41",
+            "coordinate": {
+                "latitudine": 42.503,
+                "longitudine": 12.6456
+            }
         }
-      },
-      {
-        "nome": "Negozio 2",
-        "coordinate": {
-          "latitudine": 45.4642,
-          "longitudine": 9.19
-        }
-      },
-      {
-        "nome": "Negozio 3",
-        "coordinate": {
-          "latitudine": 40.8522,
-          "longitudine": 14.2681
-        }
-      },
-      {
-        "nome": "Negozio 4",
-        "coordinate": {
-          "latitudine": 44.4071,
-          "longitudine": 8.9339
-        }
-      },
-      {
-        "nome": "Negozio 5",
-        "coordinate": {
-          "latitudine": 37.5079,
-          "longitudine": 15.083
-        }
-      },
-      {
-        "nome": "Negozio 6",
-        "coordinate": {
-          "latitudine": 38.1157,
-          "longitudine": 13.3615
-        }
-      },
-      {
-        "nome": "Negozio 7",
-        "coordinate": {
-          "latitudine": 42.3415,
-          "longitudine": 13.4056
-        }
-      },
-      {
-        "nome": "Negozio 8",
-        "coordinate": {
-          "latitudine": 40.8518,
-          "longitudine": 14.2681
-        }
-      },
-      {
-        "nome": "Negozio 9",
-        "coordinate": {
-          "latitudine": 45.0703,
-          "longitudine": 7.6869
-        }
-      },
-      {
-        "nome": "Negozio 10",
-        "coordinate": {
-          "latitudine": 45.4641,
-          "longitudine": 9.191
-        }
-      },
-      {
-        "nome": "Negozio 11",
-        "coordinate": {
-          "latitudine": 37.5074,
-          "longitudine": 15.083
-        }
-      },
-      {
-        "nome": "Negozio 12",
-        "coordinate": {
-          "latitudine": 44.4989,
-          "longitudine": 11.3276
-        }
-      },
-      {
-        "nome": "Negozio 13",
-        "coordinate": {
-          "latitudine": 43.7696,
-          "longitudine": 11.2558
-        }
-      },
-      {
-        "nome": "Negozio 14",
-        "coordinate": {
-          "latitudine": 45.4408,
-          "longitudine": 10.9944
-        }
-      },
-      {
-        "nome": "Negozio 15",
-        "coordinate": {
-          "latitudine": 42.504,
-          "longitudine": 12.6466
-        }
-      },
-      {
-        "nome": "Negozio 16",
-        "coordinate": {
-          "latitudine": 40.8528,
-          "longitudine": 14.2681
-        }
-      },
-      {
-        "nome": "Negozio 17",
-        "coordinate": {
-          "latitudine": 44.4074,
-          "longitudine": 8.9337
-        }
-      },
-      {
-        "nome": "Negozio 18",
-        "coordinate": {
-          "latitudine": 37.509,
-          "longitudine": 15.083
-        }
-      },
-      {
-        "nome": "Negozio 19",
-        "coordinate": {
-          "latitudine": 38.115,
-          "longitudine": 13.362
-        }
-      },
-      {
-        "nome": "Negozio 20",
-        "coordinate": {
-          "latitudine": 42.3425,
-          "longitudine": 13.4051
-        }
-      },
-      {
-        "nome": "Negozio 21",
-        "coordinate": {
-          "latitudine": 40.8525,
-          "longitudine": 14.2679
-        }
-      },
-      {
-        "nome": "Negozio 22",
-        "coordinate": {
-          "latitudine": 45.07,
-          "longitudine": 7.6865
-        }
-      },
-      {
-        "nome": "Negozio 23",
-        "coordinate": {
-          "latitudine": 45.4639,
-          "longitudine": 9.1905
-        }
-      },
-      {
-        "nome": "Negozio 24",
-        "coordinate": {
-          "latitudine": 37.507,
-          "longitudine": 15.0835
-        }
-      },
-      {
-        "nome": "Negozio 25",
-        "coordinate": {
-          "latitudine": 44.4985,
-          "longitudine": 11.3271
-        }
-      },
-      {
-        "nome": "Negozio 26",
-        "coordinate": {
-          "latitudine": 43.77,
-          "longitudine": 11.256
-        }
-      },
-      {
-        "nome": "Negozio 27",
-        "coordinate": {
-          "latitudine": 45.4405,
-          "longitudine": 10.9939
-        }
-      },
-      {
-        "nome": "Negozio 28",
-        "coordinate": {
-          "latitudine": 42.5035,
-          "longitudine": 12.6461
-        }
-      },
-      {
-        "nome": "Negozio 29",
-        "coordinate": {
-          "latitudine": 40.853,
-          "longitudine": 14.2679
-        }
-      },
-      {
-        "nome": "Negozio 30",
-        "coordinate": {
-          "latitudine": 44.407,
-          "longitudine": 8.9335
-        }
-      },
-      {
-        "nome": "Negozio 31",
-        "coordinate": {
-          "latitudine": 37.5085,
-          "longitudine": 15.0835
-        }
-      },
-      {
-        "nome": "Negozio 32",
-        "coordinate": {
-          "latitudine": 38.1145,
-          "longitudine": 13.3625
-        }
-      },
-      {
-        "nome": "Negozio 33",
-        "coordinate": {
-          "latitudine": 42.343,
-          "longitudine": 13.4056
-        }
-      },
-      {
-        "nome": "Negozio 34",
-        "coordinate": {
-          "latitudine": 40.8535,
-          "longitudine": 14.2676
-        }
-      },
-      {
-        "nome": "Negozio 35",
-        "coordinate": {
-          "latitudine": 45.0695,
-          "longitudine": 7.6861
-        }
-      },
-      {
-        "nome": "Negozio 36",
-        "coordinate": {
-          "latitudine": 45.4635,
-          "longitudine": 9.191
-        }
-      },
-      {
-        "nome": "Negozio 37",
-        "coordinate": {
-          "latitudine": 37.5065,
-          "longitudine": 15.0839
-        }
-      },
-      {
-        "nome": "Negozio 38",
-        "coordinate": {
-          "latitudine": 44.498,
-          "longitudine": 11.3266
-        }
-      },
-      {
-        "nome": "Negozio 39",
-        "coordinate": {
-          "latitudine": 43.7705,
-          "longitudine": 11.2563
-        }
-      },
-      {
-        "nome": "Negozio 40",
-        "coordinate": {
-          "latitudine": 45.44,
-          "longitudine": 10.9934
-        }
-      },
-      {
-        "nome": "Negozio 41",
-        "coordinate": {
-          "latitudine": 42.503,
-          "longitudine": 12.6456
-        }
-      }
     ]
-  }
+}
