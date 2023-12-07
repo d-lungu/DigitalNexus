@@ -1,11 +1,5 @@
 <script>
     import { browser } from '$app/environment'
-    import MdiTrash from 'virtual:icons/mdi/trash'
-    import {
-        goBack,
-        roundToTwoDigits,
-        addItemToCart,
-    } from '$lib/configurationHelper.js'
     import Chart from 'chart.js/auto'
     import { onMount } from 'svelte'
 

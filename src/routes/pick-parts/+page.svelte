@@ -300,7 +300,7 @@
     <!-- bottom buttons -->
     <div class="container flex flex-row text-center shadow">
         <div class="basis-1/2 py-8">
-            <a href="/grafico"><button class="btn"> Price Chart</button></a>
+            <a href="/chart"><button class="btn"> Price Chart</button></a>
         </div>
         <div class="basis-1/2 py-8">
             <button class="btn" on:click={addAllItemsToCart}>Add to cart</button
