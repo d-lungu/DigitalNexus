@@ -55,21 +55,23 @@
         </thead>
         <tbody>
             {#each storages as storage}
-                <tr
-                    on:click={() =>
-                        selectStorage(
-                            storage.name,
-                            checkForNullPrice(storage.price)
-                        )}
-                    class="hover:bg-primary"
-                >
-                    <td>{storage.name}</td>
-                    <td>{checkForNullPrice(storage.price)}</td>
-                    <td>{storage.capacity} MB</td>
-                    <td>{storage.type}</td>
-                    <td>{storage.form_factor}</td>
-                    <td>{storage.interface}</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(storage.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectStorage(
+                                storage.name,
+                                checkForNullPrice(storage.price)
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{storage.name}</td>
+                        <td>{checkForNullPrice(storage.price)}</td>
+                        <td>{storage.capacity} MB</td>
+                        <td>{storage.type}</td>
+                        <td>{storage.form_factor}</td>
+                        <td>{storage.interface}</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

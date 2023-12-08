@@ -55,18 +55,23 @@
         </thead>
         <tbody>
             {#each cases as _case}
-                <tr
-                    on:click={() =>
-                        selectCase(_case.name, checkForNullPrice(_case.price))}
-                    class="hover:bg-primary"
-                >
-                    <td>{_case.name}</td>
-                    <td>$ {checkForNullPrice(_case.price)}</td>
-                    <td>{_case.type}</td>
-                    <td>{_case.color}</td>
-                    <td>{_case.side_panel}</td>
-                    <td>{_case.external_volume} L</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(_case.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectCase(
+                                _case.name,
+                                checkForNullPrice(_case.price)
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{_case.name}</td>
+                        <td>$ {checkForNullPrice(_case.price)}</td>
+                        <td>{_case.type}</td>
+                        <td>{_case.color}</td>
+                        <td>{_case.side_panel}</td>
+                        <td>{_case.external_volume} L</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

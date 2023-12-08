@@ -55,18 +55,20 @@
         </thead>
         <tbody>
             {#each psus as psu}
-                <tr
-                    on:click={() =>
-                        selectPsu(psu.name, checkForNullPrice(psu.price))}
-                    class="hover:bg-primary"
-                >
-                    <td>{psu.name}</td>
-                    <td>$ {checkForNullPrice(psu.price)}</td>
-                    <td>{psu.type}</td>
-                    <td>{psu.efficiency}</td>
-                    <td>{psu.wattage} W</td>
-                    <td>{psu.modular}</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(psu.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectPsu(psu.name, checkForNullPrice(psu.price))}
+                        class="hover:bg-primary"
+                    >
+                        <td>{psu.name}</td>
+                        <td>$ {checkForNullPrice(psu.price)}</td>
+                        <td>{psu.type}</td>
+                        <td>{psu.efficiency}</td>
+                        <td>{psu.wattage} W</td>
+                        <td>{psu.modular}</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

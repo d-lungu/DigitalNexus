@@ -62,19 +62,21 @@
         </thead>
         <tbody>
             {#each cpuCoolers as cpuCooler}
-                <tr
-                    on:click={() =>
-                        selectCpuCooler(
-                            cpuCooler.name,
-                            checkForNullPrice(cpuCooler.price)
-                        )}
-                    class="hover:bg-primary"
-                >
-                    <td>{cpuCooler.name}</td>
-                    <td>$ {checkForNullPrice(cpuCooler.price)}</td>
-                    <!--<td>{printCpuCoolerRpm(cpuCooler.rpm)}</td>-->
-                    <!--<td>{cpuCooler.noise_level}</td>-->
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(cpuCooler.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectCpuCooler(
+                                cpuCooler.name,
+                                checkForNullPrice(cpuCooler.price)
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{cpuCooler.name}</td>
+                        <td>$ {checkForNullPrice(cpuCooler.price)}</td>
+                        <!--<td>{printCpuCoolerRpm(cpuCooler.rpm)}</td>-->
+                        <!--<td>{cpuCooler.noise_level}</td>-->
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

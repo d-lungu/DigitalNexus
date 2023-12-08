@@ -57,22 +57,24 @@
         </thead>
         <tbody>
             {#each cpus as cpu}
-                <tr
-                    on:click={() =>
-                        selectCpu(
-                            cpu.name,
-                            checkForNullPrice(cpu.price),
-                            cpu.tdp
-                        )}
-                    class="hover:bg-primary"
-                >
-                    <td>{cpu.name}</td>
-                    <td>$ {checkForNullPrice(cpu.price)}</td>
-                    <td>{cpu.core_count}</td>
-                    <td>{cpu.core_clock} GHz</td>
-                    <td>{cpu.boost_clock} GHz</td>
-                    <td>{cpu.tdp} W</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(cpu.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectCpu(
+                                cpu.name,
+                                checkForNullPrice(cpu.price),
+                                cpu.tdp
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{cpu.name}</td>
+                        <td>$ {checkForNullPrice(cpu.price)}</td>
+                        <td>{cpu.core_count}</td>
+                        <td>{cpu.core_clock} GHz</td>
+                        <td>{cpu.boost_clock} GHz</td>
+                        <td>{cpu.tdp} W</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

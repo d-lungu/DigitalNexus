@@ -54,17 +54,19 @@
         </thead>
         <tbody>
             {#each rams as ram}
-                <tr
-                    on:click={() =>
-                        selectRam(ram.name, checkForNullPrice(ram.price))}
-                    class="hover:bg-primary"
-                >
-                    <td>{ram.name}</td>
-                    <td>$ {checkForNullPrice(ram.price)}</td>
-                    <td>DDR{ram.speed[0]}</td>
-                    <td>{ram.speed[1]} MHz</td>
-                    <td>{ram.modules[0]} x {ram.modules[1]} GB</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(ram.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectRam(ram.name, checkForNullPrice(ram.price))}
+                        class="hover:bg-primary"
+                    >
+                        <td>{ram.name}</td>
+                        <td>$ {checkForNullPrice(ram.price)}</td>
+                        <td>DDR{ram.speed[0]}</td>
+                        <td>{ram.speed[1]} MHz</td>
+                        <td>{ram.modules[0]} x {ram.modules[1]} GB</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

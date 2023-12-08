@@ -47,6 +47,14 @@ export function addItemToCart(itemName, itemPrice) {
     }
 }
 
+export function checkIfShowUnkPriceItems() {
+    if (browser = typeof window !== 'undefined' && sessionStorage.getItem('showUnkPriceItems') === null && sessionStorage.getItem('showUnkPriceItems') !== "false") {
+        sessionStorage.setItem('showUnkPriceItems', "true")
+        return true;
+    }
+    return false;
+}
+
 export var datasetEndpoints = {
     cpu: 'https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/cpu.json',
     case: 'https://raw.githubusercontent.com/docyx/pc-part-dataset/main/data/json/case.json',

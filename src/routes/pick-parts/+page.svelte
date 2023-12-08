@@ -148,6 +148,12 @@
 
         goBack('/cart')
     }
+
+    $: showUnkPriceItems =
+        sessionStorage.getItem('showUnkPriceItems') === 'true'
+    $: {
+        sessionStorage.setItem('showUnkPriceItems', showUnkPriceItems)
+    }
 </script>
 
 <div
@@ -163,6 +169,10 @@
         </div>
     </div>
     <!--<p class="text-xl text-justify">Estimated Wattage: {estimatedWattage} W</p>-->
+    <label>
+        <input type="checkbox" bind:checked={showUnkPriceItems} />
+        Show items with unknown price
+    </label>
 
     <!-- Table header -->
     <div class="container flex flex-row text-center shadow font-bold">

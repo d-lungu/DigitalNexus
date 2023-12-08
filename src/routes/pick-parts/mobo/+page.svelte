@@ -56,19 +56,24 @@
         </thead>
         <tbody>
             {#each mobos as mobo}
-                <tr
-                    on:click={() =>
-                        selectMobo(mobo.name, checkForNullPrice(mobo.price))}
-                    class="hover:bg-primary"
-                >
-                    <td>{mobo.name}</td>
-                    <td>$ {checkForNullPrice(mobo.price)}</td>
-                    <td>{mobo.socket}</td>
-                    <td>{mobo.form_factor}</td>
-                    <td>{mobo.max_memory} GB</td>
-                    <td>{mobo.memory_slots}</td>
-                    <td>{mobo.color}</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(mobo.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectMobo(
+                                mobo.name,
+                                checkForNullPrice(mobo.price)
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{mobo.name}</td>
+                        <td>$ {checkForNullPrice(mobo.price)}</td>
+                        <td>{mobo.socket}</td>
+                        <td>{mobo.form_factor}</td>
+                        <td>{mobo.max_memory} GB</td>
+                        <td>{mobo.memory_slots}</td>
+                        <td>{mobo.color}</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

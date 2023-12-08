@@ -53,16 +53,18 @@
         </thead>
         <tbody>
             {#each oss as os}
-                <tr
-                    on:click={() =>
-                        selectOs(os.name, checkForNullPrice(os.price))}
-                    class="hover:bg-primary"
-                >
-                    <td>{os.name}</td>
-                    <td>$ {checkForNullPrice(os.price)}</td>
-                    <td>{os.mode}</td>
-                    <td>{os.max_memory} GB</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(os.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectOs(os.name, checkForNullPrice(os.price))}
+                        class="hover:bg-primary"
+                    >
+                        <td>{os.name}</td>
+                        <td>$ {checkForNullPrice(os.price)}</td>
+                        <td>{os.mode}</td>
+                        <td>{os.max_memory} GB</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>

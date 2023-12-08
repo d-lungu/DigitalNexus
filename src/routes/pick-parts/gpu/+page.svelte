@@ -56,23 +56,25 @@
         </thead>
         <tbody>
             {#each gpus as gpu}
-                <tr
-                    on:click={() =>
-                        selectGpu(
-                            gpu.name + ' ' + gpu.chipset,
-                            checkForNullPrice(gpu.price)
-                        )}
-                    class="hover:bg-primary"
-                >
-                    <td>{gpu.name}</td>
-                    <td>$ {checkForNullPrice(gpu.price)}</td>
-                    <td>{gpu.chipset}</td>
-                    <td>{gpu.memory} GB</td>
-                    <td>{gpu.core_clock} MHz</td>
-                    <td>{gpu.boost_clock} MHz</td>
-                    <td>{gpu.color}</td>
-                    <td>{gpu.length} mm</td>
-                </tr>
+                {#if (sessionStorage.getItem('showUnkPriceItems') === 'false' && checkForNullPrice(gpu.price) !== 0) || sessionStorage.getItem('showUnkPriceItems') === 'true' || sessionStorage.getItem('showUnkPriceItems') === null}
+                    <tr
+                        on:click={() =>
+                            selectGpu(
+                                gpu.name + ' ' + gpu.chipset,
+                                checkForNullPrice(gpu.price)
+                            )}
+                        class="hover:bg-primary"
+                    >
+                        <td>{gpu.name}</td>
+                        <td>$ {checkForNullPrice(gpu.price)}</td>
+                        <td>{gpu.chipset}</td>
+                        <td>{gpu.memory} GB</td>
+                        <td>{gpu.core_clock} MHz</td>
+                        <td>{gpu.boost_clock} MHz</td>
+                        <td>{gpu.color}</td>
+                        <td>{gpu.length} mm</td>
+                    </tr>
+                {/if}
             {:else}
                 <div class="container flex flex-row">
                     <span class="loading loading-dots loading-xs"></span>
