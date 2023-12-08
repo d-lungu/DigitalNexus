@@ -6,6 +6,7 @@
         roundToTwoDigits,
         addItemToCart,
     } from '$lib/configurationHelper.js'
+    import PcConfigurationTableSelect from '$lib/props/PcConfigurationTableSelect.svelte'
 
     if (browser === null) {
         browser = typeof window !== 'undefined' ? true : null
@@ -171,125 +172,85 @@
     </div>
 
     <!-- CPU Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">CPU</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/cpu/"
-                >{isCpuSelected ? getLocalStorage('cpuName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isCpuSelected ? '$' + getLocalStorage('cpuPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isCpuSelected}
+        componentName="CPU"
+        url="./pick-parts/cpu/"
+        nameStorageVariableName="cpuName"
+        priceStorageVariableName="cpuPrice"
+    />
 
     <!-- CPU Cooler Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">CPU Cooler</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/cpu-cooler/"
-                >{isCpuCoolerSelected
-                    ? getLocalStorage('cpuCoolerName')
-                    : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isCpuCoolerSelected ? '$' + getLocalStorage('cpuCoolerPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isCpuCoolerSelected}
+        componentName="CPU Cooler"
+        url="./pick-parts/cpu-cooler/"
+        nameStorageVariableName="cpuCoolerName"
+        priceStorageVariableName="cpuCoolerPrice"
+    />
 
     <!-- Mobo Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">Motherboard</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/mobo/"
-                >{isMoboSelected ? getLocalStorage('moboName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isMoboSelected ? '$' + getLocalStorage('moboPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isMoboSelected}
+        componentName="Motherboard"
+        url="./pick-parts/mobo/"
+        nameStorageVariableName="moboName"
+        priceStorageVariableName="moboPrice"
+    />
 
     <!-- GPU Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">GPU</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/gpu/"
-                >{isGpuSelected ? getLocalStorage('gpuName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isGpuSelected ? '$' + getLocalStorage('gpuPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isGpuSelected}
+        componentName="GPU"
+        url="./pick-parts/gpu/"
+        nameStorageVariableName="gpuName"
+        priceStorageVariableName="gpuPrice"
+    />
 
     <!-- RAM Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">RAM</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/ram/"
-                >{isRamSelected ? getLocalStorage('ramName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isRamSelected ? '$' + getLocalStorage('ramPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isRamSelected}
+        componentName="RAM"
+        url="./pick-parts/ram/"
+        nameStorageVariableName="ramName"
+        priceStorageVariableName="ramPrice"
+    />
 
     <!-- Case Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">Case</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/case/"
-                >{isCaseSelected ? getLocalStorage('caseName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isCaseSelected ? '$' + getLocalStorage('casePrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isCaseSelected}
+        componentName="Case"
+        url="./pick-parts/case/"
+        nameStorageVariableName="caseName"
+        priceStorageVariableName="casePrice"
+    />
 
     <!-- Storage Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">Storage</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/storage/"
-                >{isStorageSelected
-                    ? getLocalStorage('storageName')
-                    : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isStorageSelected ? '$' + getLocalStorage('storagePrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isStorageSelected}
+        componentName="Storage"
+        url="./pick-parts/storage/"
+        nameStorageVariableName="storageName"
+        priceStorageVariableName="storagePrice"
+    />
 
     <!-- PSU Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">Power Supply</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/psu/"
-                >{isPsuSelected ? getLocalStorage('psuName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isPsuSelected ? '$' + getLocalStorage('psuPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isPsuSelected}
+        componentName="Power Supply"
+        url="./pick-parts/psu/"
+        nameStorageVariableName="psuName"
+        priceStorageVariableName="psuPrice"
+    />
 
     <!-- OS Selection -->
-    <div class="container flex flex-row text-center shadow">
-        <div class="basis-1/4">Operating System</div>
-        <div class="basis-1/4">
-            <a href="./pick-parts/os/"
-                >{isOsSelected ? getLocalStorage('osName') : 'Select'}</a
-            >
-        </div>
-        <div class="basis-1/2">
-            {isOsSelected ? '$' + getLocalStorage('osPrice') : ''}
-        </div>
-    </div>
+    <PcConfigurationTableSelect
+        isSelectedVariable={isOsSelected}
+        componentName="Operating System"
+        url="./pick-parts/os/"
+        nameStorageVariableName="osName"
+        priceStorageVariableName="osPrice"
+    />
 
     <!-- Results -->
     <div class="container flex flex-row text-center shadow">
