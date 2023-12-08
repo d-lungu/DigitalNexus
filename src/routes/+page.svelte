@@ -3,7 +3,7 @@
     import MdiCreditCardOutline from 'virtual:icons/mdi/credit-card-outline'
     import MdiStar from 'virtual:icons/mdi/star'
     import MdiTag from 'virtual:icons/mdi/tag'
-    import LeafletMap from '$lib/LeafletMap.svelte'
+    import LeafletMap from '$lib/components/LeafletMap.svelte'
 </script>
 
 <div class="container mx-auto flex items-center justify-center">

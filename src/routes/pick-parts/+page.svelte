@@ -6,7 +6,7 @@
         roundToTwoDigits,
         addItemToCart,
     } from '$lib/configurationHelper.js'
-    import PcConfigurationTableSelect from '$lib/props/PcConfigurationTableSelect.svelte'
+    import PcConfigurationTableSelect from '$lib/components/PcConfigurationTableSelect.svelte'
 
     if (browser === null) {
         browser = typeof window !== 'undefined' ? true : null
