@@ -16,11 +16,11 @@ npm run dev
 ```
 
 ## Technologies used:
-[SvelteKit)](https://kit.svelte.dev/)
-[TailwindCSS](https://tailwindcss.com/)
-[DaisyUI](https://daisyui.com/)
-[Chart.js](https://www.chartjs.org/)
-[Leaflet.js](https://leafletjs.com/)
+* [SvelteKit)](https://kit.svelte.dev/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [DaisyUI](https://daisyui.com/)
+* [Chart.js](https://www.chartjs.org/)
+* [Leaflet.js](https://leafletjs.com/)
 
 ## About the project
 We were tasked by our teacher with creating a web application using a JavaScript framework. The application was to utilize one or more datasets and process them, transforming raw data into meaningful information.
